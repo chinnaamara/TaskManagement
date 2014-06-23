@@ -3,8 +3,55 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="../lib.min.css" media='screen'>
+    <link rel="stylesheet" href="../style.min.css" media='screen'>
+    <script src="lib.min.js"></script>
+    <script src="sourse.min.js"></script>
+    <script src="login.min.js"></script>
 </head>
 <body>
-<span>Chinna</span>
+
+<script type="text/x-handlebars-template" id ="login_nav-template">
+    <nav class="navbar navbar-inverse navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Task Management</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</script>
+
+<script type="text/x-handlebars-template" id ="login-template">
+    <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="text-center">Login</h1>
+                </div>
+                <div class="modal-body">
+                    <form class="form col-md-12 center-block">
+                        <div class="form-group">
+                            <input type="text" id="userName" class="form-control input-lg" placeholder="Email or Username" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" class="form-control input-lg" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-lg btn-block" id="btnLogin" value="LogIn">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" id="footer"></div>
+            </div>
+        </div>
+    </div>
+</script>
+<div id="login-navBar"></div>
+<div id="loginForm"></div>
 </body>
 </html>
