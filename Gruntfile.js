@@ -3,17 +3,18 @@
  */
 
 module.exports = function(grunt) {
-    (require('load-grunt-tasks'))(grunt)
+    (require('load-grunt-tasks'))(grunt);
     grunt.registerTask('serve', ['connect:server']);
     grunt.registerTask('build', ['bower', 'concurrent:build']);
     grunt.registerTask('mini', ['concurrent:mini']);
     grunt.registerTask('all', ['bower', 'default']);
-    grunt.registerTask('default', ['bower', 'connect', 'uglify']);
+    grunt.registerTask('default', ['concurrent:build', 'concurrent:mini']);
     grunt.registerTask('test', ['jshint', 'karma:spec', 'karma:singleRun']);
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-bower-task');
+//    grunt.loadNpmTasks('grunt-contrib-jshint');
+//    grunt.loadNpmTasks('grunt-contrib-connect');
+//    grunt.loadNpmTasks('grunt-contrib-watch');
+//    grunt.loadNpmTasks('grunt-karma');
+//    grunt.loadNpmTasks('grunt-bower-task');
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -68,8 +69,8 @@ module.exports = function(grunt) {
                         'build/lib/handlebars/handlebars.js',
                         'src/lib/*.js'
                     ],
-                    'build/js/sourse.min.js': [
-                        'src/js/*.js', 'src/js/!(login).js'
+                    'build/js/all.min.js': [
+                        'src/js/tasks.js', 'src/js/home.js', 'src/js/!(login).js'
                     ],
                     'build/js/login.min.js': [
                         'src/js/login.js'
@@ -88,12 +89,32 @@ module.exports = function(grunt) {
             }
         },
 
-        concurrent:{
-            build: ['newer:cssmin', 'newer:uglify'],
+        watch: {
+            html: {
+                files: ['src/html/**/*.html'],
+                tasks: []
+            },
+            js: {
+                files: ['src/html/**/*.js'],
+                tasks: ['uglify']
+            },
+            css: {
+                files: ['src/css/**/*.css'],
+                tasks: ['cssmin']
+            },
+            options: {
+                spawn: true,
+                livereload: true
+            }
+        },
+
+        concurrent: {
+            build: ['newer:cssmin', 'newer:uglify', 'newer:jshint'],
             mini: ['serve', 'watch'],
             options:{
                 logConcurrentOutput: true
             }
         }
+
     });
 };

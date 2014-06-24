@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="../lib.min.css" media='screen'>
+        <link rel="stylesheet" href="../style.min.css" media='screen'>
+        <script src="lib.min.js"></script>
+        <script src="all.min.js"></script>
+	</head>
+	<body>
+        <script type="text/x-handlebars-template" id ="content-template">
+          <h3>Dashboard</h3>
+          <ul id="tasksList" class="list-group" style="list-style: none;"></ul>
+          <div class="pagination" style="display: none;">
+            <ul id="pager" class="pageview"></ul>
+          </div>
+        </script>
+
+        <script type="text/x-handlebars-template" id ="addTask-template">
+          <h1 class="text-center" id="heading">Create Task</h1>
+          <form name="taskForm" role="form" class="form-horizontal" id="addTask" >
+            <div class="form-group " >
+              <label for="title" class="col-sm-2 control-label">Summary</label>
+              <div class="col-sm-10">
+                <input type="text" id="title" name="title" placeholder="Task Summary" class="form-control" autofocus/>
+              </div>
+            </div>
+            <div class="form-group ">
+              <label for="priority" class="col-sm-2 control-label">Priority</label>
+              <div class="col-sm-10">
+                <!--<input type="text" id="priority" name="priority" placeholder="Priority" class="form-control"/>-->
+                <select id="priority" name="priority" placeholder="Priority" class="form-control" id="">
+                  <option>Major</option>
+                  <option>Minor</option>
+                  <option>Trivial</option>
+                  <option>Blocker</option>
+                  <option>Critical</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group ">
+              <label for="dueDate" class="col-sm-2 control-label">Due Date</label>
+              <div class="col-sm-10">
+                <input type="date" id="dueDate" name="dueDate" placeholder="Due Date" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group ">
+              <label for="name" class="col-sm-2 control-label">Description</label>
+              <div class="col-sm-10">
+                <textarea name="description" id="description" placeholder="Description" class="form-control"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" id="btnAddTask" class="btn btn-info" onclick="addUpdateTask();"><span id="spn">Create</span></button>
+              </div>
+            </div>
+          </form>
+        </script>
+        <script type="text/x-handlebars-template" id="task-template">
+          <h2>Task Summary</h2>
+          <div id="task">
+            <button type="button" class="btn btn-default" onclick="editTask();">Edit</button>
+            <button type="button" class="btn btn-default" onclick="startTask();">Start Progresss</button>
+            <button type="button" class="btn btn-default" onclick="resolveTask();">Resolve</button>
+            <button type="button" class="btn btn-default" onclick="deleteTask();" id = "delete-task">Delete</button>
+            <h4>Details</h4>
+            <ul id="taskView" class="listview" style="list-style: none;"></ul>
+          </div>
+        </script>
+        <div id="navBar">
+            <nav class="navbar navbar-inverse navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Task Management</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tasks<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a id="cteateTask">Create Task</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Delete Task</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="home.html">Dashboard</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Setings</a></li>
+                                <li class="divider"></li>
+                                <li><a href="../../index.html">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div id="content"></div>
+        <!--<div id="addNew"></div>-->
+	</body>
+</html>

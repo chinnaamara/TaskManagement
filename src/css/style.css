@@ -6,70 +6,70 @@
 }
 
 #content{
-	margin-left: 100px;  
-	/*margin-right: 100px;*/
+	margin-left: 100px;
+	margin-right: 100px;
 	width: 85%;
 	background-color: #ddd;
 }
-#content ul {
-   list-style: none;
-   margin: 1em 0;
-   padding: 0; 
-}
-#content ul li {
-   font-weight: bold;
-   margin: 0;
-   padding: 3px 10px 5px 20px;
-   border-bottom: 1px solid #ccc;
-   color: #666; 
-}
-#content ul li:nth-child(odd) {
-    background: #eee;
-}
-#content ul li:hover {
-   color: green;
-   background-color: #aaa; 
-   cursor: pointer;
-}
+/*#content ul {*/
+   /*list-style: none;*/
+   /*margin: 1em 0;*/
+   /*padding: 0;*/
+/*}*/
+/*#content ul li {*/
+   /*font-weight: bold;*/
+   /*margin: 0;*/
+   /*padding: 3px 10px 5px 20px;*/
+   /*border-bottom: 1px solid #ccc;*/
+   /*color: #666;*/
+/*}*/
+/*#content ul li:nth-child(odd) {*/
+    /*background: #eee;*/
+/*}*/
+/*#content ul li:hover {*/
+   /*color: green;*/
+   /*background-color: #aaa;*/
+   /*cursor: pointer;*/
+/*}*/
 
-/*#content ul {
-    margin: 10px;
-}*/
-/*#content ul li {
-    padding: 5px;
-    border: 1px solid #999;
-}*/
-/*#content ul li {
-    background: #ccc;
-}*/
+/*#content ul {*/
+    /*margin: 10px;*/
+/*}*/
+/*#content ul li {*/
+    /*padding: 5px;*/
+    /*border: 1px solid #999;*/
+/*}*/
+/*#content ul li {*/
+    /*background: #ccc;*/
+/*}*/
 
-#content ul li a {
-    color: #000;
-    text-decoration: underline;
-}
+/*#content ul li a {*/
+    /*color: #000;*/
+    /*text-decoration: underline;*/
+/*}*/
 
-#task{
-   margin-left: 50px;  
+/*#task{*/
+   /*margin-left: 50px;  */
    /*margin-right: 100px;*/
-   width: 40%;
-   background-color: #ddd;
-}
-#task ul {
-   list-style: none;
-   margin: 1em 0;
-   padding: 0; 
-}
-#task ul li {
-   font-weight: bold;
-   margin: 0;
-   padding: 3px 10px 5px 20px;
-   border-bottom: 1px solid #ccc;
-   color: #666; 
-}
-#task ul li:nth-child(odd) {
-    background: #eee;
-}
-.pagination li {
-  display: inline;
-}
+   /*width: 40%;*/
+   /*background-color: #ddd;*/
+/*}*/
+/*#task ul {*/
+   /*list-style: none;*/
+   /*margin: 1em 0;*/
+   /*padding: 0; */
+/*}*/
+/*#task ul li {*/
+   /*font-weight: bold;*/
+   /*margin: 0;*/
+   /*padding: 3px 10px 5px 20px;*/
+   /*border-bottom: 1px solid #ccc;*/
+   /*color: #666; */
+/*}*/
+/*#task ul li:nth-child(odd) {*/
+    /*background: #eee;*/
+/*}*/
+/*.pagination li {*/
+  /*display: inline;*/
+/*}*/
 
